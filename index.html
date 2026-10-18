@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Country Information & Flag Browser</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="header-content">
+
+            <h1>
+                <i class="fa-solid fa-earth-americas"></i>
+                Country Explorer
+            </h1>
+
+            <button id="theme-btn" class="theme-btn">
+                <i class="fa-solid fa-moon"></i>
+                Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="intro">
+
+            <h2>Explore the World</h2>
+
+            <p>
+                Discover countries, flags, capitals,
+                populations and more...
+            </p>
+
+        </section>
+
+
+        <section class="statistics">
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-earth-americas"></i>
+
+                <div>
+                    <h3 id="total-countries">0</h3>
+                    <p>Total Countries</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <div>
+                    <h3 id="total-population">0</h3>
+                    <p>Total Population</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-map-location-dot"></i>
+
+                <div>
+                    <h3 id="total-regions">0</h3>
+                    <p>Regions</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="filters">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search country by name..."
+                >
+
+            </div>
+
+
+            <select id="region-filter">
+
+                <option value="all">All Regions</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">Americas</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+                <option value="Antarctic">Antarctic</option>
+
+            </select>
+
+
+            <select id="sort-filter">
+
+                <option value="name-asc">
+                    Name: A to Z
+                </option>
+
+                <option value="name-desc">
+                    Name: Z to A
+                </option>
+
+                <option value="population-desc">
+                    Population: High to Low
+                </option>
+
+                <option value="population-asc">
+                    Population: Low to High
+                </option>
+
+            </select>
+
+
+            <button id="reset-btn" class="reset-btn">
+
+                <i class="fa-solid fa-rotate-left"></i>
+                Reset
+
+            </button>
+
+        </section>
+
+
+        <div id="loading">
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+            Loading countries...
+
+        </div>
+
+
+        <div id="error-message"></div>
+
+
+        <section
+            id="countries-container"
+            class="countries-container"
+        ></section>
+
+
+        <div id="no-results" class="no-results">
+
+            <i class="fa-solid fa-earth-americas"></i>
+
+            <h2>No Countries Found</h2>
+
+            <p>Try another country name or region.</p>
+
+        </div>
+
+
+        <section id="details-section" class="details-section">
+
+            <button id="close-details" class="close-btn">
+
+                <i class="fa-solid fa-xmark"></i>
+
+                Close Details
+
+            </button>
+
+            <div id="country-details"></div>
+
+        </section>
+
+
+        <div class="results-info">
+
+            Showing
+            <span id="visible-count">0</span>
+            countries
+
+        </div>
+
+    </main>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
